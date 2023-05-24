@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Core\AuthController;
 use App\Http\Controllers\Api\Core\CategoriesController;
+use App\Http\Controllers\Api\Core\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,15 @@ Route::prefix('v1/web')->middleware(['api'])->group(function() {
             Route::post('/', [CategoriesController::class, 'postCategory']);
             Route::put('/update/{id}', [CategoriesController::class, 'updateCategory']);
             Route::delete('/delete/{id}', [CategoriesController::class, 'deleteCategory']);
+
+        });
+
+        Route::prefix('news')->group(function(){
+            Route::get('/', [NewsController::class, 'getsNews']);
+            Route::get('/{id}', [NewsController::class, 'getNews']);
+            Route::post('/', [NewsController::class, 'postNews']);
+            Route::put('/update/{id}', [NewsController::class, 'updateNews']);
+            Route::delete('/delete/{id}', [NewsController::class, 'deleteNews']);
 
         });
     });

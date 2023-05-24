@@ -30,7 +30,7 @@ class CategoriesController extends Controller
     public function getCategory($id)
     {
         $user = JWTAuth::user();
-        $data = Categories::where('id',$user->id)
+        $data = Categories::where('author',$user->id)
         ->find($id);
         if ($data!=null) {
             return ResponseFormatter::responseSuccessWithData('Category data successfully found!', $data);

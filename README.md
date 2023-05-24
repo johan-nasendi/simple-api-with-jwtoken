@@ -11,17 +11,24 @@ php artisan key:generate
 
 ## DOCS API
 
-Endpoint | Description | METHOD
+Endpoint | Description | Method
 ------|------------|------------
 Show All Users | `/api/v1/web/all/users` | GET
 Login or Generate token | `/api/v1/web/auth/login` | POST 
 Register with token | `/api/v1/web/auth/register`  | POST
 Logout | `/api/v1/web/auth/logout` | POST
++++++++++++++++++++++++++++++++
 Gets Categories | `/api/v1/web/catagory` | GET
 Get Categories | `/api/v1/web/catagory/{id}` | GET
 Crate Categories | `/api/v1/web/catagory` | POST
 Update Categories | `/api/v1/web/catagory/update/{id}` | PUT
 Delete Categories | `/api/v1/web/catagory/delete/{id}` | DELETE
++++++++++++++++++++++++++++++++
+Gets News | `/api/v1/web/news` | GET
+Get News | `/api/v1/web/news/{id}` | GET
+Crate News | `/api/v1/web/news` | POST
+Update News | `/api/v1/web/news/update/{id}` | PUT
+Delete News | `/api/v1/web/news/delete/{id}` | DELETE
 
 ## NOTES
 - [x] Logout harus wajib mengdeskirpsikan token pada body json jika mengunakan postman
