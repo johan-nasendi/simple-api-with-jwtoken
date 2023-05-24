@@ -21,8 +21,8 @@ Show All Users | `/api/v1/web/all/users`
 
 
 ## NOTES
-- [] Logout harus wajib mengdeskirpsikan token pada body json jika mengunakan postman
-- [] All users harus wajib mengdeskirpsikan token pada authorization -> select Bearer Token dan masukan token yang digenerate dari hasil login
+- [x] Logout harus wajib mengdeskirpsikan token pada body json jika mengunakan postman
+- [x] All users harus wajib mengdeskirpsikan token pada authorization -> select Bearer Token dan masukan token yang digenerate dari hasil login
 
 
 
