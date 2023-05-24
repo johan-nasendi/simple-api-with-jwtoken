@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Core\AuthController;
+use App\Http\Controllers\Api\Core\CategoriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,15 @@ Route::prefix('v1/web')->middleware(['api'])->group(function() {
     Route::group(['middleware' => ['jwt.verify']], function() {
 
         Route::get('/all/users', [AuthController::class, 'getAllUser']);
+
+        Route::prefix('catagory')->group(function(){
+            Route::get('/', [CategoriesController::class, 'getsCategory']);
+            Route::get('/{id}', [CategoriesController::class, 'getCategory']);
+            Route::post('/', [CategoriesController::class, 'postCategory']);
+            Route::put('/update/{id}', [CategoriesController::class, 'updateCategory']);
+            Route::delete('/delete/{id}', [CategoriesController::class, 'deleteCategory']);
+
+        });
     });
 
 });

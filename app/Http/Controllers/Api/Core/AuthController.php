@@ -17,7 +17,7 @@ class AuthController extends Controller
 {
     public function getAllUser()
     {
-        $data = User::all();
+        $data = User::with('createdCatagory')->get();
         return response()->json([
             'error' => false,
             'status' => true,
@@ -49,6 +49,7 @@ class AuthController extends Controller
                 $data = [
                     'name' => $request->name,
                     'email' => $request->email,
+                    'email_verified_at' => now(),
                     'password' => bcrypt($request->password),
                 ];
                 $user = User::create($data);
